@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stack = [];//tạo một mảng rỗng, sau đó thêm giá trị vào bằng hàm push()
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(15);
+        stack.push(6);
+        stack.push(-1);
+
+        function getMax(stack) {
+            var tmp = stack.slice();//slice(): dùng để sao chép mảng stack
+            var max = tmp.pop();//gán max bằng giá trị đầu tiên lấy ra từ stack
+            while (tmp.length > 0) {
+                max = Math.max(max, tmp.pop());
+            }
+            console.log(stack);
+            return max;
+        }
+
+        console.log(getMax(stack)); 
+    </script>
+</body>
+</html>

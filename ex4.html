@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function clockAngle (hour, minutes) {
+            var minutesPerHour = 60;
+            var degreesPerMinutes = 360 / minutesPerHour;
+            var degreesPerHour = 360 / 12;
+            var minutesAngle = minutes * degreesPerMinutes;
+            var hourAngle = hour * degreesPerHour + (minutes / minutesPerHour) * degreesPerHour;
+            var diff = Math.abs(minutesAngle - hourAngle);
+            if (diff > 180) {
+                return 360 - diff;
+            }
+            return diff
+        }
+        console.log(clockAngle(14,30));
+
+    </script>
+</body>
+</html>
