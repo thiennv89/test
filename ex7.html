@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getMaxProfit(stockPrices) {
+            if (stockPrices.length < 2) {
+                return "Get profit requires at least 2 prices!";
+            }
+            // var minPrice = stockPrices[0];
+            // var maxProfit = stockPrices[1] - stockPrices[0];
+            // for(var i = 1; i < stockPrices.length; i++) {
+            //     var currentPrice = stockPrices[i];
+            //     var temporaryProfit = currentPrice - minPrice;
+            //     maxProfit = Math.max(maxProfit, temporaryProfit);
+            //     minPrice = Math.min(currentPrice,minPrice);
+            // }
+            a = stockPrices.sort(function(a,b) {return a-b;});
+            maxProfit = a[stockPrices.length-1] - a[0];
+            return maxProfit;
+        }
+        stockPrices = [10,7,5,8,11,18];
+        console.log(getMaxProfit(stockPrices));
+    </script>
+</body>
+</html>
