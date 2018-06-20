@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findNumber() {
+            var i = 11;
+            while(i < 100) {
+                var a = i.toString();
+                var c = parseInt(a[0]);
+                var d = parseInt(a[1]);
+                if ((c * d) === 2 * (c + d)) {
+                    return i;
+                }
+                i++;
+            }
+        }
+        console.log(findNumber());
+    </script>
+</body>
+</html>
