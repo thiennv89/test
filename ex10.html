@@ -1,0 +1,30 @@
+<!-- Find the larger and nearest number -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Find the larger and nearest</h2>
+    <p id="demo"></p>
+    <script>
+        var arr = [1,4,2,3,5,7];
+        function findLarger(arr,index) {
+            var min = -arr.length;
+            var i = 0;
+            for(i; i < arr.length; i++){
+                if(arr[i] > arr[index]) {
+                    if(Math.abs(i-index) < Math.abs(min-index)){
+                        min = i;
+                    }
+                }
+            }
+            return arr[min];
+        }
+        document.getElementById("demo").innerHTML = findLarger(arr,3);
+    </script>
+</body>
+</html>
