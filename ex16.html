@@ -1,0 +1,36 @@
+<!-- Reverse Word -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseCharacters(str, startIndex, endIndex) {
+            while (startIndex < endIndex){
+                var tmp = str[startIndex];
+                str[startIndex] = str[endIndex];
+                str[endIndex] = tmp;
+                startIndex++;
+                endIndex--;
+            }
+        }
+        function reverseWord(str){
+            var newStr = str.split("");
+            reverseCharacters(newStr, 0, newStr.length - 1);
+            var currentIndex = 0;
+            for(var i = 0; i <= newStr.length; i++){
+                if(i === newStr.length || newStr[i] === " "){
+                    reverseCharacters(newStr, currentIndex, i - 1);
+                    currentIndex = i + 1;
+                }
+            }
+            return newStr.join("");
+        }
+        console.log(reverseWord("cake pound steal"));
+    </script>
+</body>
+</html>
