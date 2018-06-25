@@ -1,0 +1,30 @@
+<!-- Matching Parens -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getClosingParen(str, openingParenIndex){
+            var openNestedParens = 0;
+            for(var i = openingParenIndex + 1; i < str.length; i++){
+                var char = str[i];
+                if(char === "("){
+                    openNestedParens += 1;
+                } else if(char === ")"){
+                    if(openNestedParens === 0){
+                        return i;
+                    } else {
+                        openNestedParens = -1;
+                    }
+                }
+            }
+            return "No closing parenthesis";
+        }
+    </script>
+</body>
+</html>

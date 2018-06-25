@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isRiffle(half1, half2, shuffedDeck){
+            var half1Index = 0;
+            var half2Index = 0;
+            var half1MaxIndex = half1.length - 1;
+            var half2MaxIndex = half2.length - 1;
+            for(var i = 0; i < shuffedDeck.length; i++){
+                var card = shuffedDeck[i];
+                if(half1Index <= half1MaxIndex && half1[half1Index] === card) {
+                    half1Index++;
+                } else if(half2Index <= half2MaxIndex && half2[half2Index] === card){
+                    half2Index++;
+                } else return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

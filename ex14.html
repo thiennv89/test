@@ -12,7 +12,7 @@
         console.log(stack);
         function queueTwoStacks(stack) {
             var tmp = [];
-            for (var i=0; i < stack.length; i++){
+            for (var i=0; i < stack.length - 1; i++){
                 tmp[i] = stack.pop();
             }
             return tmp;

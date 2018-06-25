@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandom(floor, ceiling) {
+            return Math.floor(Math.random()*(ceiling - floor) + floor);
+        }
+        function shuffle(arr){
+            for(var i = 0; i < arr.length; i++){
+                var base = getRandom(i, arr.length);
+                var tmp = arr[i];
+                arr[i]=arr[base];
+                arr[base]=tmp;
+            }
+            return arr;
+        }
+        var arr = [1,3,4,7,8];
+        console.log(shuffle(arr));
+    </script>
+</body>
+</html>

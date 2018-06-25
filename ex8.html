@@ -10,14 +10,15 @@
     <script>
         function findNumber() {
             var i = 11;
-            while(i < 100) {
+            var arr = [];
+            for (i = 11; i < 100; i++){
                 var a = i.toString();
-                var c = parseInt(a[0]);
-                var d = parseInt(a[1]);
+                var b = a.split("");
+                var c = parseInt(b[0]);
+                var d = parseInt(b[1]);
                 if ((c * d) === 2 * (c + d)) {
                     return i;
                 }
-                i++;
             }
         }
         console.log(findNumber());

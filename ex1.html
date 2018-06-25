@@ -21,7 +21,6 @@
 
         function getMax(stack) {
             var tmp = stack.slice();//slice(): dùng để sao chép mảng stack
-            console.log(tmp);
             var max = tmp.pop();//gán max bằng giá trị phần tử cuối lấy ra từ stack
             while (tmp.length > 0) {
                 max = Math.max(max, tmp.pop());
